@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romanlyn's Ube - Made with Passion</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load MuseoModerno font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Define custom colors and font family */
+        :root {
+            --color-primary: #581845; /* Dark Violet */
+            --color-secondary: #906A9C; /* Lighter Violet for contrast */
+            --color-text-light: #F3E5F5; /* Very Light Purple/Off-white */
+        }
+        .font-museo {
+            font-family: 'MuseoModerno', cursive;
+        }
+        /* Tailwind custom configuration (using colors defined above) */
+        .bg-primary { background-color: var(--color-primary); }
+        .text-primary { color: var(--color-primary); }
+        .bg-secondary { background-color: var(--color-secondary); }
+        .text-secondary { color: var(--color-secondary); }
+        .text-light { color: var(--color-text-light); }
+        .border-primary { border-color: var(--color-primary); }
+
+        /* Custom scrollbar for elegance (optional) */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-thumb { background: var(--color-secondary); border-radius: 4px; }
+        ::-webkit-scrollbar-track { background: var(--color-primary); }
+    </style>
+</head>
+<body class="bg-light font-museo text-gray-800 antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="bg-primary shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-bold text-light tracking-widest cursor-pointer">
+                ROMANLYN'S
+            </h1>
+            <nav class="space-x-4">
+                <a href="#shop" class="text-light hover:text-secondary transition duration-300 font-semibold uppercase text-sm hidden sm:inline-block">Shop Ube</a>
+                <a href="#workshop" class="text-light hover:text-secondary transition duration-300 font-semibold uppercase text-sm hidden sm:inline-block">Workshops</a>
+                <a href="#location" class="text-light hover:text-secondary transition duration-300 font-semibold uppercase text-sm hidden sm:inline-block">Find Us</a>
+                <button id="cart-button" class="bg-secondary text-light px-4 py-2 rounded-lg hover:bg-light hover:text-primary transition duration-300 font-bold text-sm shadow-md">
+                    Cart (0)
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-primary overflow-hidden min-h-screen flex items-center justify-center">
+        <!-- Background elements (optional subtle pattern or graphic) -->
+        <div class="absolute inset-0 opacity-10">
+            <svg viewBox="0 0 100 100" class="w-full h-full" preserveAspectRatio="none">
+                <defs>
+                    <pattern id="pattern-circles" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
+                        <circle cx="2" cy="2" r="1" fill="#FFFFFF"/>
+                    </pattern>
+                </defs>
+                <rect x="0" y="0" width="100%" height="100%" fill="url(#pattern-circles)"/>
+            </svg>
+        </div>
+
+        <div class="max-w-2xl mx-auto text-center p-8 relative z-6">
+            <!-- Brand Logo/Image -->
+            <img src="logo.jpg" alt="Romanlyn's Ube Logo"
+     onerror="this.onerror=null;this.src='https://placehold.co/400x400/581845/F3E5F5?text=ROMANLYNS+UBE';">
+            <br>
+            
+            
+            <p class="text-lg text-light sm:text-1xl text-secondary mb-5 font-medium">
+                Produit des Philippines importé en France
+            </p>
+            <p class="text-lg text-light italic mb-6">
+                "Fabriqué avec passion, dévouement et amour"
+            </p>
+            <br>
+            <a href="#shop" class="bg-secondary text-light px-10 py-4 text-xl font-bold rounded-full shadow-xl hover:shadow-2xl hover:bg-light hover:text-primary transition duration-500 transform hover:scale-105">
+                Discover Our Jar
+            </a>
+        </div>
+    </section>
+
+    <!-- Shop Section -->
+    <section id="shop" class="py-16 sm:py-24 bg-light">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-5xl font-bold text-center text-primary mb-12">
+                Our Signature Ube Halaya
+            </h3>
+            <div class="flex flex-col md:flex-row items-center bg-white rounded-xl shadow-2xl overflow-hidden">
+                
+                <!-- Product Image -->
+                <div class="md:w-1/2 p-6 md:p-12 flex justify-center items-center bg-gray-50">
+                    <img src="jar.jpg" alt="Our product"
+     onerror="this.onerror=null;this.src='https://placehold.co/400x400/581845/F3E5F5?text=ROMANLYNS+UBE';">
+
+                </div>
+
+                <!-- Product Details and Purchase Options -->
+                <div class="md:w-1/2 p-8 md:p-12">
+                    <h4 class="text-4xl font-extrabold text-primary mb-3">
+                        The Romanlyn's Ube Jar
+                    </h4>
+                    <p class="text-lg text-gray-600 mb-6">
+                        Authentic Filipino Ube (Purple Yam) Halaya, crafted into a smooth, decadent dessert spread. Perfect for baking, snacking, or straight out of the jar.
+                    </p>
+                    <div class="mb-6 text-2xl font-bold text-primary">
+                        250g Jar — €12.50
+                    </div>
+
+                    <!-- Workshop Add-on Toggle -->
+                    <div class="bg-gray-100 p-4 rounded-lg mb-8 border border-secondary">
+                        <label for="workshop-toggle" class="flex items-center cursor-pointer">
+                            <input type="checkbox" id="workshop-toggle" class="hidden">
+                            <div class="relative">
+                                <div class="toggle-track w-10 h-6 bg-gray-300 rounded-full shadow-inner transition duration-200 ease-in-out"></div>
+                                <div class="toggle-thumb absolute w-4 h-4 bg-white rounded-full shadow inset-y-1 left-1 transition duration-300 ease-in-out"></div>
+                            </div>
+                            <div class="ml-3 text-lg font-semibold text-primary">
+                                Add a 3x/week Cooking Workshop Pass
+                                <span class="ml-2 text-secondary font-bold text-xl">+€10.00</span>
+                            </div>
+                        </label>
+                        <p class="text-sm text-gray-500 mt-2 ml-14">
+                            Available for in-store redemption only (Paris boutique). Learn authentic Ube recipes!
+                        </p>
+                    </div>
+                    
+                    <!-- Checkout Button -->
+                    <button id="add-to-cart-btn" class="w-full bg-primary text-light px-8 py-4 text-xl font-bold rounded-lg shadow-xl hover:bg-secondary transition duration-300 transform hover:scale-[1.02]">
+                        Add to Cart & Checkout (€12.50)
+                    </button>
+
+                    <!-- Payment Options -->
+                    <div class="mt-6 text-center">
+                        <p class="text-sm font-semibold uppercase text-gray-500 mb-3">Secure Payments Powered By</p>
+                        <div class="flex justify-center space-x-4 flex-wrap gap-3">
+                            <!-- Icons from lucide-react equivalent SVG/Placeholder -->
+                            <span class="text-3xl text-gray-600" title="Apple Pay">Pay</span>
+                            <span class="text-3xl text-gray-600" title="Google Pay">GPay</span>
+                            <span class="text-3xl text-gray-600" title="PayPal">P🅿️</span>
+                            <span class="text-3xl text-gray-600" title="Visa/Mastercard">💳</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workshop Section -->
+    <section id="workshop" class="py-16 sm:py-24 bg-primary text-light">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-5xl font-bold text-center text-secondary mb-12">
+                The Ube Cooking Workshop
+            </h3>
+            
+            <div class="flex flex-col md:flex-row-reverse items-center bg-secondary rounded-xl shadow-2xl overflow-hidden">
+                
+                <!-- Workshop Image -->
+                <div class="md:w-1/2 p-6 md:p-12 flex justify-center items-center bg-secondary/70">
+                    <img src="class.jpg" 
+                         alt="People participating in an Ube cooking class at Romanlyn's" 
+                         onerror="this.onerror=null;this.src='https://placehold.co/400x300/581845/F3E5F5?text=Cooking+Class';"
+                         class="w-full h-auto object-cover rounded-xl shadow-xl">
+                </div>
+
+                <!-- Workshop Details -->
+                <div class="md:w-1/2 p-8 md:p-12">
+                    <h4 class="text-4xl font-extrabold text-light mb-3">
+                        Learn the Art of baking UbeHalaya
+                    </h4>
+                    <p class="text-lg text-light/80 mb-6">
+                        Elevate your culinary skills with our hands-on Ube cooking workshops, held 3 times a week at our Paris boutique. Learn to prepare traditional and modern Ube desserts from our expert chefs.
+                    </p>
+                    <ul class="space-y-3 text-light/90 mb-8 list-none pl-0">
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-secondary-200" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> 3 Sessions per Week</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-secondary-200" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> Hands-on Experience</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-secondary-200" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> Exclusive to In-Store Purchases (+€10)</li>
+                    </ul>
+                    <a href="#shop" class="inline-block bg-light text-primary px-8 py-3 font-bold rounded-lg shadow-xl hover:bg-gray-200 transition duration-300">
+                        Buy Ube & Unlock Workshops
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="py-16 sm:py-24 bg-light">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-5xl font-bold text-center text-primary mb-12">
+                Find Romanlyn's
+            </h3>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <!-- Paris Boutique -->
+                <div class="bg-white p-8 rounded-xl shadow-2xl border-t-8 border-primary">
+                    <h4 class="text-3xl font-extrabold text-primary mb-3">Our Boutique</h4>
+                    <p class="text-lg text-gray-700 mb-4">
+                        Visit us to shop, collect your workshop pass, and experience the Ube magic in person!
+                    </p>
+                    <address class="not-italic text-gray-600 mb-6">
+                        <strong class="text-primary">Romanlyn's Paris</strong><br>
+                        155 Rue de Turenne, Paris, France<br>
+                        Marais 3rd Arrondissement
+                    </address>
+                    <!-- Placeholder shop -->
+                    <div class="w-full h-45 rounded-lg overflow-hidden border border-dashed border-gray-400">
+    <img src="shop.jpg" alt="Map of 155 Rue de Turenne" class="w-full h-full object-cover">
+                </div>
+
+                <!-- Biocoop Retailers -->
+                <div class="bg-white p-8 rounded-xl shadow-2xl border-t-8 border-secondary">
+                    <h4 class="text-3xl font-extrabold text-primary mb-3">Available at Biocoop</h4>
+                    <p class="text-lg text-gray-700 mb-4">
+                        You can also find Romanlyn's Ube Jars in all Paris Biocoop stores.
+                    </p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-secondary" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.17 1.408l.19-.07c.928-.35 1.765-.89 2.502-1.636a14.28 14.28 0 004.814-5.32c.51-.818.847-1.85 1.054-2.902.26.136.452.327.653.513l.08.08c.59.59.84.975 1.15.952.348-.025.597-.333.585-.718l-.004-.15a1 1 0 00-.518-.942l-5-1.5z" clip-rule="evenodd" fill-rule="evenodd"></path></svg> All Parisian Locations</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-secondary" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.17 1.408l.19-.07c.928-.35 1.765-.89 2.502-1.636a14.28 14.28 0 004.814-5.32c.51-.818.847-1.85 1.054-2.902.26.136.452.327.653.513l.08.08c.59.59.84.975 1.15.952.348-.025.597-.333.585-.718l-.004-.15a1 1 0 00-.518-.942l-5-1.5z" clip-rule="evenodd" fill-rule="evenodd"></path></svg> Organic and Local Stores</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-secondary" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.17 1.408l.19-.07c.928-.35 1.765-.89 2.502-1.636a14.28 14.28 0 004.814-5.32c.51-.818.847-1.85 1.054-2.902.26.136.452.327.653.513l.08.08c.59.59.84.975 1.15.952.348-.025.597-.333.585-.718l-.004-.15a1 1 0 00-.518-.942l-5-1.5z" clip-rule="evenodd" fill-rule="evenodd"></path></svg> Same Great Taste!</li>
+                    </ul>
+                     <div class="flex gap-4">
+        <img src="map.jpg" alt="Biocoop Store 1" class="w-1/2 h-auto rounded-lg shadow-md object-cover">
+        <img src="Biocoop.jpg" alt="Biocoop Store 2" class="w-1/2 h-auto rounded-lg shadow-md object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-light">
+            <p class="text-2xl font-bold mb-3">ROMANLYN'S</p>
+            <p class="text-sm mb-4">"Fabriqué avec passion, dévouement et amour"</p>
+            <div class="flex justify-center space-x-6 text-sm">
+                <a href="#" class="hover:text-secondary transition duration-300">Privacy Policy</a>
+                <a href="#" class="hover:text-secondary transition duration-300">Terms of Service</a>
+                <a href="mailto:contact@romanlyns.com" class="hover:text-secondary transition duration-300">Contact Us</a>
+            </div>
+            <p class="mt-6 text-xs text-light/50">&copy; 2025 Romanlyn's Ube. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for E-commerce Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const workshopToggle = document.getElementById('workshop-toggle');
+            const addToCartBtn = document.getElementById('add-to-cart-btn');
+            const cartButton = document.getElementById('cart-button');
+            const productBasePrice = 12.50;
+            const workshopPrice = 10.00;
+            let currentPrice = productBasePrice;
+            let workshopAdded = false;
+            let cartCount = 0;
+
+            const updatePriceDisplay = () => {
+                currentPrice = productBasePrice + (workshopAdded ? workshopPrice : 0);
+                addToCartBtn.textContent = `Add to Cart & Checkout (€${currentPrice.toFixed(2)})`;
+            };
+
+            const updateCartDisplay = () => {
+                 cartButton.textContent = `Cart (${cartCount})`;
+            }
+
+            // Toggle logic
+            workshopToggle.addEventListener('change', (e) => {
+                workshopAdded = e.target.checked;
+                updatePriceDisplay();
+                
+                // Animate toggle thumb
+                const thumb = e.target.closest('label').querySelector('.toggle-thumb');
+                if (workshopAdded) {
+                    thumb.style.transform = 'translateX(100%)';
+                    thumb.style.backgroundColor = 'var(--color-primary)';
+                    e.target.closest('label').querySelector('.toggle-track').style.backgroundColor = 'var(--color-secondary)';
+                } else {
+                    thumb.style.transform = 'translateX(0)';
+                    thumb.style.backgroundColor = 'white';
+                    e.target.closest('label').querySelector('.toggle-track').style.backgroundColor = 'var(--color-secondary)';
+                }
+            });
+
+            // Add to Cart / Checkout Simulation
+            addToCartBtn.addEventListener('click', () => {
+                cartCount++;
+                updateCartDisplay();
+                
+                let message = `Successfully added one Ube Jar (€${productBasePrice.toFixed(2)}) to your cart.`;
+                if (workshopAdded) {
+                    message += ` You also added the 3x/week Workshop Pass (+€${workshopPrice.toFixed(2)}).`;
+                }
+                message += ` Total for this item: €${currentPrice.toFixed(2)}. Proceeding to simulated checkout.`;
+
+                // Custom Modal for Alerting (since alert() is forbidden)
+                showCustomMessage(message, "Item Added");
+            });
+
+            // Initial setup
+            updatePriceDisplay();
+            updateCartDisplay();
+            
+            // Function to show a custom, elegant message box
+            function showCustomMessage(message, title) {
+                const modalId = 'custom-message-modal';
+                let modal = document.getElementById(modalId);
+
+                if (!modal) {
+                    modal = document.createElement('div');
+                    modal.id = modalId;
+                    modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[100] p-4 hidden';
+                    modal.innerHTML = `
+                        <div class="bg-white p-8 rounded-xl shadow-2xl max-w-sm w-full transform transition-all duration-300 scale-95 opacity-0 border-t-8 border-primary font-museo">
+                            <h5 class="text-2xl font-bold text-primary mb-4">${title}</h5>
+                            <p class="text-gray-700 mb-6">${message}</p>
+                            <button class="w-full bg-secondary text-light px-4 py-3 rounded-lg font-bold hover:bg-primary transition duration-300" onclick="document.getElementById('${modalId}').classList.add('hidden'); document.getElementById('${modalId}').querySelector('div').classList.remove('scale-100', 'opacity-100'); document.getElementById('${modalId}').querySelector('div').classList.add('scale-95', 'opacity-0');">
+                                Close & Continue Shopping
+                            </button>
+                        </div>
+                    `;
+                    document.body.appendChild(modal);
+                } else {
+                    modal.querySelector('h5').textContent = title;
+                    modal.querySelector('p').textContent = message;
+                }
+
+                modal.classList.remove('hidden');
+                // Trigger transition after display
+                setTimeout(() => {
+                    modal.querySelector('div').classList.remove('scale-95', 'opacity-0');
+                    modal.querySelector('div').classList.add('scale-100', 'opacity-100');
+                }, 10);
+            }
+        });
+    </script>
+
+</body>
+</html>
+
+
